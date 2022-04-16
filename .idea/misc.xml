@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android projects/MyBookLibrary/app/src/main/res/layout/activity_all_books.xml" value="0.1763157894736842" />
+        <entry key="..\:/Android projects/MyBookLibrary/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Android projects/MyBookLibrary/app/src/main/res/layout/list_item_book.xml" value="0.1763157894736842" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/java/com/example/mybooklibrary/view/font/adamina.xml" value="0.27076923076923076" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/java/com/example/mybooklibrary/view/layout/activity_book.xml" value="0.24479166666666666" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/java/com/example/mybooklibrary/view/layout/activity_favorite.xml" value="0.24479166666666666" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/java/com/example/mybooklibrary/view/layout/list_item_book.xml" value="0.24479166666666666" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/java/view/layout/activity_all_books.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/mvc structure/view/layout/activity_about.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/mvc structure/view/layout/activity_already_read_books.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/mvc structure/view/layout/activity_book.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/mvc structure/view/layout/activity_currently_reading_book.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/mvc structure/view/layout/activity_favorite.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/mvc structure/view/layout/activity_main.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/mvc structure/view/layout/activity_want_to_read.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/mvc structure/view/layout/activity_website.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/mvc structure/view/layout/list_item_book.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/res/layout/activity_all_books.xml" value="0.2129115006412997" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/res/layout/activity_already_read_book.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/res/layout/activity_already_read_books.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/res/layout/activity_book.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/res/layout/activity_currently_reading_book.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/res/layout/activity_del.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/res/layout/activity_favorite.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/res/layout/activity_main.xml" value="0.2129115006412997" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/res/layout/activity_mm.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/res/layout/activity_want_to_read.xml" value="0.259375" />
+        <entry key="..\:/AndroidStudioProjects/MyBookLibrary/app/src/main/res/layout/list_item_book.xml" value="0.264" />
+        <entry key="..\:/MyBookLibrary/app/src/main/res/layout/activity_all_books.xml" value="0.1763157894736842" />
+        <entry key="..\:/MyBookLibrary/app/src/main/res/layout/activity_main.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="jbr-11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
