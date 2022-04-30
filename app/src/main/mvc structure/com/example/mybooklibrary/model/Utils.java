@@ -6,13 +6,12 @@ import java.util.ArrayList;
 
 public class Utils {
     private static Utils instance;
-
     private static ArrayList<Book> allBooks;
     private static ArrayList<Book> alreadyReadBook;
     private static ArrayList<Book> wantToReadBooks;
     private static ArrayList<Book> CurrentlyReadingBooks;
     private static ArrayList<Book> favoriteBooks;
-    private Utils() {
+    public Utils() {
         if(null==allBooks){
             allBooks=new ArrayList<>();
             initData();
