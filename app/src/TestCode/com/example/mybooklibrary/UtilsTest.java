@@ -39,21 +39,21 @@ public class UtilsTest {
 
     @Test
     public void testRemoveFromAlreadyRead() {
-        assertFalse(u.removeFromAlreadyRead(b));
+        assertTrue(u.removeFromAlreadyRead(b));
     }
 
     @Test
     public void testRemoveFromWantToRead() {
-        assertFalse(u.removeFromWantToRead(b));
+        assertTrue(u.removeFromWantToRead(b));
     }
 
     @Test
     public void testRemoveFromFavoriteBook() {
-        assertFalse(u.removeFromFavoriteBook(b));
+        assertTrue(u.removeFromFavoriteBook(b));
     }
 
     @Test
     public void testRemoveFromCurrentlyReading() {
-        assertFalse(u.removeFromCurrentlyReading(b));
+        assertTrue(u.removeFromCurrentlyReading(b));
     }
 }

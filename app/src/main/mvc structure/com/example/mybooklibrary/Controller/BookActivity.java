@@ -13,25 +13,19 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.mybooklibrary.R;
 
+import com.example.mybooklibrary.databinding.ActivityBookBinding;
 import com.example.mybooklibrary.model.Utils;
 
 import java.util.ArrayList;
 
 public class BookActivity extends AppCompatActivity {
-    private TextView txtBookName,txtAuthor,txtPages,txtDescription;
-    private Button btnAddToCurrentlyReading, btnAddToWantToRead, btnAddToAlreadyRead, btnAddingToFavBooks;
-    private ImageView bookImage;
+    ActivityBookBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book);
-        initViews();
- //       String longDescription="An essay is nothing but a piece of content which is written from the perception of writer or author. Essays are similar to a story, pamphlet, thesis, etc. The best thing about Essay is you can use any type of language – formal or informal." +
-   //             "\n"+" It can biography, the autobiography of anyone.An essay is nothing but a piece of content which is written from the perception of writer or author. Essays are similar to a story, pamphlet, thesis, etc. The best thing about Essay is you can use any type of language – formal or informal. " +
-   //             "\n" + "It can biography, the autobiography of anyone.An essay is nothing but a piece of content which is written from the perception of writer or author. Essays are similar to a story, pamphlet, thesis, etc. The best thing about Essay is you can use any type of language – formal or informal. It can biography, the autobiography of anyone.An essay is nothing but a piece of content which is written from the perception of writer or author. Essays are similar to a story, pamphlet, thesis, etc. The best thing about Essay is you can use any type of language – formal or informal. It can biography, the autobiography of anyone.An essay is nothing but a piece of content which is written from the perception of writer or author. Essays are similar to a story, pamphlet, thesis, etc. The best thing about Essay is you can use any type of language – formal or informal. It can biography, the autobiography of anyone.An essay is nothing but a piece of content which is written from the perception of writer or author. Essays are similar to a story, pamphlet, thesis, etc. The best thing about Essay is you can use any type of language – formal or informal. It can biography, the autobiography of anyone.An essay is nothing but a piece of content which is written from the perception of writer or author. Essays are similar to a story, pamphlet, thesis, etc. The best thing about Essay is you can use any type of language – formal or informal. It can biography, the autobiography of anyone.An essay is nothing but a piece of content which is written from the perception of writer or author. Essays are similar to a story, pamphlet, thesis, etc. The best thing about Essay is you can use any type of language – formal or informal. It can biography, the autobiography of anyone.An essay is nothing but a piece of content which is written from the perception of writer or author. Essays are similar to a story, pamphlet, thesis, etc. The best thing about Essay is you can use any type of language – formal or informal. It can biography, the autobiography of anyone.";
-   //     //TODO: Get data from Recycler view in here
-  //      Book book = new Book(1, "1Q84", "Haruki Murakami", 1350, "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1483103331l/10357575.jpg", "A book of maddening brilliance", longDescription);
-
+        binding=ActivityBookBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+// Receiving the intent with id
         Intent intent=getIntent();
         if (null!=intent){
             int bookID= intent.getIntExtra("bookId", -1);
@@ -61,10 +55,10 @@ public class BookActivity extends AppCompatActivity {
             }
         }
         if (existInCurrentlyReadingBooks){
-            btnAddToCurrentlyReading.setEnabled(false);
+            binding.btnAddToCurrentlyReading.setEnabled(false);
         }
         else{
-            btnAddToCurrentlyReading.setOnClickListener(new View.OnClickListener() {
+            binding.btnAddToCurrentlyReading.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if(Utils.getInstance().addToCurrentlyReadingBooks(book)){
@@ -91,10 +85,10 @@ public class BookActivity extends AppCompatActivity {
             }
         }
         if (existInFavoriteBooks){
-            btnAddingToFavBooks.setEnabled(false);
+            binding.btnAddingToFavBooks.setEnabled(false);
         }
         else{
-            btnAddingToFavBooks.setOnClickListener(new View.OnClickListener() {
+            binding.btnAddingToFavBooks.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if(Utils.getInstance().addToFavorite(book)){
@@ -121,10 +115,10 @@ public class BookActivity extends AppCompatActivity {
             }
         }
         if (existInWantToReadBooks){
-            btnAddToWantToRead.setEnabled(false);
+            binding.btnAddToWantToRead.setEnabled(false);
         }
         else{
-            btnAddToWantToRead.setOnClickListener(new View.OnClickListener() {
+            binding.btnAddToWantToRead.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if(Utils.getInstance().addTWantToRead(book)){
@@ -141,7 +135,7 @@ public class BookActivity extends AppCompatActivity {
         }
     }
     private void handleAlreadyRead(Book book){
-        ArrayList<Book> alreadyReadBooks= Utils.getInstance().getAlreadyReadBook();
+        ArrayList<Book> alreadyReadBooks= Utils.getAlreadyReadBook();
         boolean existInAlreadyReadBooks=false;
         for (Book b: alreadyReadBooks){
             if (b.getId() == book.getId()) {
@@ -150,10 +144,10 @@ public class BookActivity extends AppCompatActivity {
             }
         }
         if (existInAlreadyReadBooks){
-            btnAddToAlreadyRead.setEnabled(false);
+            binding.btnAddToAlreadyRead.setEnabled(false);
         }
         else{
-            btnAddToAlreadyRead.setOnClickListener(new View.OnClickListener() {
+            binding.btnAddToAlreadyRead.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if(Utils.getInstance().addToAlreadyRead(book)){
@@ -171,27 +165,12 @@ public class BookActivity extends AppCompatActivity {
     }
 
     private void setData(Book book) {
-        txtBookName.setText(book.getName());
-        txtAuthor.setText(book.getAuthor());
-        txtPages.setText(String.valueOf(book.getPages()));
-        txtDescription.setText(book.getLongDesc());
+        binding.txtBookName.setText(book.getName());
+        binding.txtAuthor.setText(book.getAuthor());
+        binding.txtPages.setText(String.valueOf(book.getPages()));
+        binding.txtDescription.setText(book.getLongDesc());
         Glide.with(this)
                 .asBitmap()
-                .load(book.getImageUrl()).into(bookImage);
+                .load(book.getImageUrl()).into(binding.bookImage);
     }
-
-    private void initViews(){
-        txtBookName=findViewById(R.id.txtBookName);
-        txtAuthor=findViewById(R.id.txtAuthor);
-        txtPages=findViewById(R.id.txtPages);
-        txtDescription=findViewById(R.id.txtDescription);
-
-        btnAddToCurrentlyReading=findViewById(R.id.btnAddToCurrentlyReading);
-        btnAddToWantToRead=findViewById(R.id.btnAddToWantToRead);
-        btnAddToAlreadyRead=findViewById(R.id.btnAddToAlreadyRead);
-        btnAddingToFavBooks=findViewById(R.id.btnAddingToFavBooks);
-
-        bookImage=findViewById(R.id.bookImage);
-    }
-
 }

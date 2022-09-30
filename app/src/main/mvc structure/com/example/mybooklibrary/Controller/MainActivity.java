@@ -11,47 +11,49 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.mybooklibrary.R;
+import com.example.mybooklibrary.databinding.ActivityMainBinding;
 import com.example.mybooklibrary.model.Utils;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnAllBooks, btnAlreadyRead, btnWantToRead, btnCurrentlyReading, btnFavorite, btnAbout;
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding=ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        initViews();
-        btnAllBooks.setOnClickListener(new View.OnClickListener() {
+        binding.btnAllBooks.setOnClickListener(new View.OnClickListener() {
+            //taking to all books page
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this, AllBooksActivity.class);
                 startActivity(intent);
             }
         });
-        btnAlreadyRead.setOnClickListener(new View.OnClickListener() {
+        binding.btnAlreadyRead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this, AlreadyReadBooksActivity.class);
                 startActivity(intent);
             }
         });
-        btnWantToRead.setOnClickListener(new View.OnClickListener() {
+        binding.btnWantToRead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this, WantToReadActivity.class);
                 startActivity(intent);
             }
         });
-        btnFavorite.setOnClickListener(new View.OnClickListener() {
+        binding.btnFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this, FavoriteActivity.class);
                 startActivity(intent);
             }
         });
-        btnCurrentlyReading.setOnClickListener(new View.OnClickListener() {
+        binding.btnCurrentlyReading.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this, CurrentlyReadingBookActivity.class);
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnAbout.setOnClickListener(new View.OnClickListener() {
+        binding.btnAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
@@ -83,17 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 builder.create().show();
             }
         });
-
         Utils.getInstance();
 
     }
 
-    private void initViews() {
-        btnAllBooks = findViewById(R.id.btnAllBooks);
-        btnAlreadyRead = findViewById(R.id.btnAlreadyRead);
-        btnWantToRead = findViewById(R.id.btnWantToRead);
-        btnCurrentlyReading = findViewById(R.id.btnCurrentlyReading);
-        btnFavorite = findViewById(R.id.btnFavorite);
-        btnAbout = findViewById(R.id.btnAbout);
-    }
 }

@@ -18,7 +18,7 @@ public class BookTest {
     }
 
     @Test
-    public void testgetId() {
+    public void testGetId() {
         assertEquals(1, b.getId());
     }
 

@@ -23,7 +23,7 @@ public class AlreadyReadBooksActivity extends AppCompatActivity {
         BookRecViewAdapter adapter=new BookRecViewAdapter(this,"alreadyRead");
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        //Sending books for already read
         adapter.setBooks(Utils.getAlreadyReadBook());
 
     }

@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.mybooklibrary.R;
+import com.example.mybooklibrary.databinding.ActivityAboutBinding;
+import com.example.mybooklibrary.databinding.ActivityMainBinding;
 
 public class AboutActivity extends AppCompatActivity {
-
+    ActivityAboutBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        binding=ActivityAboutBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
     }
 }

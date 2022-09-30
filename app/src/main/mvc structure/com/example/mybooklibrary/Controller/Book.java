@@ -99,4 +99,5 @@ public class Book {
                 ", longDesc='" + longDesc + '\'' +
                 '}';
     }
+
 }
